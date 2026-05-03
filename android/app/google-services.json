@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "968202689571",
+    "project_id": "echoo-502fb",
+    "storage_bucket": "echoo-502fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968202689571:android:ff0f34c9496c986042a596",
+        "android_client_info": {
+          "package_name": "com.example.echoo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgMe8HBxveL7aDiHvzrYOGujl20ecplT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968202689571:android:56a850be2c96ebfb42a596",
+        "android_client_info": {
+          "package_name": "com.reactor.echoo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgMe8HBxveL7aDiHvzrYOGujl20ecplT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
