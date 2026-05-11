@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../models/room_model.dart';
-import '../room_detail_screen.dart';
-// Path apne hisaab se adjust kar lijiye
+// Apna correct path use karein
 import '../room_detail_screen.dart';
 
 class RoomCard extends StatelessWidget {
@@ -10,9 +9,15 @@ class RoomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // FIX: App crash na ho isliye agar host ki photo nahi hai, toh ek default image dikhayenge
+    String imageUrl = room.host.profilePicUrl.isNotEmpty 
+        ? room.host.profilePicUrl 
+        : 'https://ui-avatars.com/api/?name=${(room.host.name.isEmpty ? "User" : room.host.name).replaceAll(" ", "+")}&background=1B3022&color=fff';
+
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
+        // FIX 1: room.id ko room.roomId kiya
         MaterialPageRoute(builder: (context) => RoomDetailScreen(roomId: room.id)),
       ),
       child: Container(
@@ -21,7 +26,8 @@ class RoomCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
-            image: NetworkImage(room.roomImage),
+            // FIX 2: Safe Image URL use kiya (room.roomImage ki jagah)
+            image: NetworkImage(imageUrl),
             fit: BoxFit.cover,
           ),
         ),
@@ -45,7 +51,8 @@ class RoomCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.mic, color: Colors.redAccent, size: 14),
                   const SizedBox(width: 4),
-                  Text('${room.onStageCount} Live', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  // FIX 3: room.onStageCount ko room.speakers kiya
+                  Text('${room.onlineCount} Live', style: const TextStyle(color: Colors.white70, fontSize: 12)),
                 ],
               ),
             ],

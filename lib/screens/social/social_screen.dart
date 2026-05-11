@@ -59,6 +59,7 @@
 //   }
 // }
 
+import 'package:echoo/screens/rooms_screen.dart';
 import 'package:flutter/material.dart';
 import 'tabs/rooms_tab.dart';
 import 'tabs/call_tab.dart';
@@ -116,7 +117,7 @@ class SocialScreen extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
-            RoomsTab(),
+            RoomsScreen(),
             CallTab(),
             InboxScreen(), // Make sure this matches your imports
           ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'social/social_screen.dart'; 
 import 'profile_screen.dart';
+import 'vibes_screen.dart';
+// import 'Vibes/Vibes_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -14,7 +16,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   // Aapki screens ki list
   final List<Widget> _screens = [
-    const _VibesScreenStub(), 
+    const VibesScreen(), 
     const SocialScreen(),     
     const ProfileScreen(),  
   ];
